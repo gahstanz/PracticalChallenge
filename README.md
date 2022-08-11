@@ -5,7 +5,6 @@ An iOS application using Swift and UIKit that fetches users from the public REST
 https://randomuser.me/. 
 This REST API can return up to 5000 random generated user information. 
 
-For the simplicity of this challenge the scopes are limited as follow:
 * Scrollable list view display list of users
 * Each user displayed should at least the following information
   - Thumbnail
