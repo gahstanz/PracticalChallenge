@@ -2,7 +2,7 @@
 //  User.swift
 //  PracticalChallenge
 //
-//  Created by Deane Karsten on 10/08/22.
+//  Created by Deane Karsten on 11/08/22.
 //
 
 import Foundation
@@ -21,8 +21,26 @@ struct ResponseInfo: Decodable {
 
 struct User: Decodable {
     let gender: String
-    
-    enum CodingKeys: String, CodingKey {
-        case gender
-    }
+    let name: UserNames
+    let dob: UserDOB
+    let picture: UserPictureURL
+    let email: String
+    let cell: String
+}
+
+struct UserNames: Decodable {
+    let title: String
+    let first: String
+    let last: String
+}
+
+struct UserDOB: Decodable {
+    let date: String
+    let age: Int
+}
+
+struct UserPictureURL: Decodable {
+    let large: String
+    let medium: String
+    let thumbnail: String
 }

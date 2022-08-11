@@ -2,10 +2,11 @@
 //  RandomUserAPIManager.swift
 //  PracticalChallenge
 //
-//  Created by Deane Karsten on 10/08/22.
+//  Created by Deane Karsten on 11/08/22.
 //
 
 import Foundation
+import UIKit
 
 enum APIError: Error {
     case invalidUrl
@@ -17,33 +18,23 @@ enum APIError: Error {
 struct RandomUserAPIManager {
     static let shared = RandomUserAPIManager()
     
-    
-    // Get users
-    func getUsers(page: Int? = nil, results: Int = 30, completion: @escaping (Result<[User], APIError>) -> Void) {
+    func getUsers(page: Int? = nil, results: Int = 10, completion: @escaping (Result<[User], APIError>) -> Void) {
 
-//        var components = URLComponents(string: "https://randomuser.me/api")!
-//        components.queryItems = [
-//            URLQueryItem(name: "page", value: (page != nil) ? "\(page!)" : "1"),
-//            URLQueryItem(name: "results", value: "\(results)"),
-//            URLQueryItem(name: "seed", value: "celo") // consistent seed
-//        ]
-        
         var components = URLComponents()
         components.scheme = "https"
         components.host = "randomuser.me"
         components.path = "/api"
         components.queryItems = [
-            URLQueryItem(name: "page", value: (page != nil) ? "\(page!)" : "1"),
+            URLQueryItem(name: "page", value: (page != nil) ? "\(page!)" : ""),
             URLQueryItem(name: "results", value: "\(results)"),
-            URLQueryItem(name: "seed", value: "celo") // consistent seed
+            URLQueryItem(name: "seed", value: "celo") // consistent seed "CELO"
         ]
 
         guard let url = components.url else {
             completion(.failure(.invalidUrl))
             return
         }
-        
-        
+
         print(url.absoluteURL)
         
         let urlRequest = URLRequest(url: url, timeoutInterval: 10)
@@ -54,12 +45,13 @@ struct RandomUserAPIManager {
             } else if let data = data {
                 // Success request
                 do {
-                    // DECODE JSON into array of User
+                    // Decode into array of User
                     let userResponse = try JSONDecoder().decode(UserResponse.self, from: data)
                     let users = userResponse.results ?? []
                     print("success")
-                    print(users)
+                    //print(users)
                     completion(.success(users))
+                    
                 } catch {
                     // Send error when decoding
                     print("decoding error")
@@ -72,6 +64,22 @@ struct RandomUserAPIManager {
         }
         .resume()
     }
+    
+    func getImageByURL(imageURL: String, imageView: UIImageView) {
+        // Get images
+        if let url = URL(string: imageURL) {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                guard let data = data, error == nil else { return }
+                
+                DispatchQueue.main.async {
+                    imageView.image = UIImage(data: data)
+                }
+            }
+            
+            task.resume()
+        }
+    }
+
 }
 
 

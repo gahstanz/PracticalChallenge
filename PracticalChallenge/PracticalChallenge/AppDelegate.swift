@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  PracticalChallenge
 //
-//  Created by Deane Karsten on 10/08/22.
+//  Created by Deane Karsten on 11/08/22.
 //
 
 import UIKit
@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = UsersViewController()
+        //window?.rootViewController = UsersViewController()
+        window?.rootViewController = UINavigationController(rootViewController: UsersViewController())
         
         return true
     }

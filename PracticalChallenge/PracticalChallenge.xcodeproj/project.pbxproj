@@ -14,6 +14,7 @@
 		455B872A28A3CE840070C08C /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B872928A3CE840070C08C /* UserDetailViewController.swift */; };
 		455B872D28A3D0A20070C08C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B872C28A3D0A20070C08C /* User.swift */; };
 		455B873028A3D1820070C08C /* RandomUserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B872F28A3D1820070C08C /* RandomUserAPIManager.swift */; };
+		455B873928A5023F0070C08C /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455B873828A5023D0070C08C /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		455B872928A3CE840070C08C /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		455B872C28A3D0A20070C08C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		455B872F28A3D1820070C08C /* RandomUserAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserAPIManager.swift; sourceTree = "<group>"; };
+		455B873828A5023D0070C08C /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		455B870628A3BEA20070C08C /* PracticalChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				455B873C28A542180070C08C /* UserDetail */,
 				455B873228A3D1BE0070C08C /* Utils */,
 				455B872328A3CE220070C08C /* User */,
 				455B871D28A3BEF70070C08C /* Files */,
@@ -79,9 +82,9 @@
 		455B872328A3CE220070C08C /* User */ = {
 			isa = PBXGroup;
 			children = (
-				455B870B28A3BEA20070C08C /* UsersViewController.swift */,
-				455B872928A3CE840070C08C /* UserDetailViewController.swift */,
 				455B872C28A3D0A20070C08C /* User.swift */,
+				455B870B28A3BEA20070C08C /* UsersViewController.swift */,
+				455B873828A5023D0070C08C /* UserTableViewCell.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -92,6 +95,14 @@
 				455B872F28A3D1820070C08C /* RandomUserAPIManager.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		455B873C28A542180070C08C /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				455B872928A3CE840070C08C /* UserDetailViewController.swift */,
+			);
+			name = UserDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			files = (
 				455B872D28A3D0A20070C08C /* User.swift in Sources */,
 				455B870C28A3BEA20070C08C /* UsersViewController.swift in Sources */,
+				455B873928A5023F0070C08C /* UserTableViewCell.swift in Sources */,
 				455B873028A3D1820070C08C /* RandomUserAPIManager.swift in Sources */,
 				455B870828A3BEA20070C08C /* AppDelegate.swift in Sources */,
 				455B872A28A3CE840070C08C /* UserDetailViewController.swift in Sources */,
