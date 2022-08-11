@@ -1,7 +1,7 @@
 # iOS Practical Challenge
 
 ## Specification
-Write an iOS application using Swift and UIKit that fetches users from the public REST API at
+An iOS application using Swift and UIKit that fetches users from the public REST API at
 https://randomuser.me/. 
 This REST API can return up to 5000 random generated user information. 
 
